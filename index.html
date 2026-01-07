@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Fusion Challenge 🍰✨</title>
+    <title>Sweet Dreams Creator 🍰✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&family=Kodchasan:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fff5f8; /* Soft Pink */
+            --bg-color: #fff5e6; /* Creamy Peach */
             --card-bg: #ffffff;
-            --primary: #ff80ab; /* Hot Pink Pastel */
-            --secondary: #b39ddb; /* Soft Purple */
-            --accent: #ffcc80; /* Soft Orange */
-            --text: #6d4c41; /* Brown Text */
+            --primary: #ffadad; /* Pastel Red */
+            --secondary: #ffd6a5; /* Pastel Orange */
+            --accent: #9bf6ff; /* Pastel Blue */
+            --text: #845ec2; /* Soft Purple */
             --border-radius: 20px;
-            --shadow: 0 8px 20px rgba(255, 128, 171, 0.2);
+            --shadow: 0 8px 15px rgba(255, 173, 173, 0.3);
         }
 
         body {
             font-family: 'Mali', cursive;
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(#ff80ab 10%, transparent 11%),
-                radial-gradient(#b39ddb 10%, transparent 11%);
+                radial-gradient(#ffadad 10%, transparent 11%),
+                radial-gradient(#ffd6a5 10%, transparent 11%);
             background-size: 40px 40px;
             background-position: 0 0, 20px 20px;
             color: var(--text);
@@ -35,40 +35,37 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             width: 100%;
             text-align: center;
         }
 
         h1 {
             background: #fff;
-            color: var(--primary);
-            font-size: 2.5rem;
-            padding: 15px 50px;
+            color: #ff9aa2;
+            font-size: 2.2rem;
+            padding: 20px 40px;
             border-radius: 50px;
             display: inline-block;
-            border: 5px solid #ffecb3;
+            border: 5px solid #ffdac1;
             box-shadow: var(--shadow);
             margin-bottom: 30px;
             position: relative;
-            text-shadow: 2px 2px 0 #fff3e0;
         }
 
-        h1::before, h1::after {
+        h1::after {
             content: "🧁";
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
+            top: -15px;
+            right: -10px;
+            font-size: 2.5rem;
+            transform: rotate(15deg);
         }
-        h1::before { left: 15px; }
-        h1::after { right: 15px; content: "🍩"; }
 
-        /* Grid Layout */
         .grid-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
             margin-bottom: 30px;
         }
 
@@ -76,7 +73,7 @@
         .slot-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 15px;
+            padding: 15px 20px;
             border: 3px solid #fff;
             box-shadow: var(--shadow);
             transition: all 0.3s;
@@ -86,14 +83,13 @@
             position: relative;
         }
 
-        .slot-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-
+        .slot-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        
         .slot-card.locked {
-            border: 3px solid var(--primary);
-            background-color: #fff0f5;
+            border: 3px solid #ffadad;
+            background-color: #fff0f0;
         }
 
-        /* Header in Card */
         .header-row {
             display: flex;
             justify-content: space-between;
@@ -102,90 +98,68 @@
 
         .label {
             font-weight: 700;
-            color: #9fa8da;
-            font-size: 1rem;
-            text-align: left;
+            color: #ff9aa2;
+            font-size: 1.1rem;
         }
 
-        /* Lock Button */
         .lock-btn {
-            background: #f8f8f8;
+            background: #f4f4f4;
             border: none;
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
+            width: 35px;
+            height: 35px;
             cursor: pointer;
             transition: 0.2s;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
         }
-        .slot-card.locked .lock-btn { background: var(--primary); color: white; }
+        .slot-card.locked .lock-btn { background: #ffadad; color: white; }
 
-        /* Dropdown */
-        select {
-            width: 100%;
-            padding: 8px;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            font-family: 'Kodchasan', sans-serif;
-            color: var(--text);
-            background-color: #fafafa;
-            outline: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-        select:focus { border-color: var(--secondary); }
-
-        /* Display Box */
         .display-value {
-            background-color: #e0f7fa;
+            background-color: #e0fbfc;
             border-radius: 15px;
-            padding: 12px;
+            padding: 15px;
             font-weight: bold;
-            color: #006064;
-            min-height: 45px;
+            color: #5e60ce;
+            min-height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            text-align: center;
-            border: 2px dashed #b2ebf2;
+            font-size: 1.05rem;
+            border: 2px dashed #98f5e1;
             word-break: break-word;
         }
 
         .slot-card.locked .display-value {
-            background-color: #fce4ec;
-            border-color: #f8bbd0;
-            color: #c2185b;
+            background-color: #ffe5d9;
+            border-color: #ffcad4;
+            color: #d62828;
         }
 
-        /* Result & Copy Area */
+        /* Result Area */
         .result-box {
             background: #fff;
             border-radius: 30px;
-            padding: 25px;
+            padding: 30px;
             border: 4px solid var(--secondary);
             box-shadow: var(--shadow);
             margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         #finalSentence {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             line-height: 1.8;
-            color: #5d4037;
+            color: #6c757d;
             margin-bottom: 15px;
         }
 
         .highlight {
-            background: #fff9c4;
-            padding: 2px 8px;
+            background: linear-gradient(120deg, #fdffb6 0%, #fdffb6 100%);
+            padding: 0 5px;
             border-radius: 5px;
-            color: #e65100;
+            color: #ff6b6b;
             font-weight: bold;
         }
 
@@ -194,15 +168,14 @@
             height: 120px;
             padding: 15px;
             border-radius: 15px;
-            border: 2px dashed #b39ddb;
+            border: 2px dashed #aec6cf;
             font-family: 'Kodchasan', sans-serif;
             font-size: 0.95rem;
             color: #666;
             resize: none;
-            background: #f3e5f5;
+            background: #f9fcff;
             display: none;
             margin-top: 10px;
-            box-sizing: border-box;
         }
         #copyArea:focus { outline: none; border-color: var(--primary); }
 
@@ -212,11 +185,10 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
 
         .main-btn {
-            padding: 12px 35px;
+            padding: 12px 30px;
             border: none;
             border-radius: 50px;
             font-family: 'Mali', cursive;
@@ -224,42 +196,42 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.2s;
+            color: white;
+            box-shadow: 0 5px 0 rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             gap: 8px;
-            color: white;
-            box-shadow: 0 5px 0 rgba(0,0,0,0.1);
         }
         .main-btn:active { transform: translateY(4px); box-shadow: none; }
 
-        .spin-btn { background: linear-gradient(to right, #ff80ab, #ff4081); }
-        .spin-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 0 rgba(255, 64, 129, 0.3); }
+        .spin-btn { background: linear-gradient(to right, #ff9aa2, #ffb7b2); }
+        .spin-btn:hover { transform: translateY(-3px); box-shadow: 0 7px 0 rgba(255, 154, 162, 0.4); }
 
-        .reset-btn { background: #eeeeee; color: #757575; }
-        .reset-btn:hover { background: #e0e0e0; }
-        
+        .reset-btn { background: #e2ece9; color: #888; }
+        .reset-btn:hover { background: #d1dfdb; }
+
         .copy-btn { 
-            background: linear-gradient(to right, #42a5f5, #1e88e5); 
+            background: linear-gradient(to right, #a0c4ff, #bdb2ff); 
             display: none; 
         }
         .copy-btn:hover { transform: translateY(-3px); }
 
-        /* Toast */
         #toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: #333;
+            background-color: #ffb7b2;
             color: #fff;
             text-align: center;
             border-radius: 50px;
             padding: 16px;
             position: fixed;
-            z-index: 99;
+            z-index: 1;
             left: 50%;
             bottom: 30px;
             transform: translateX(-50%);
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: bold;
             opacity: 0;
             transition: opacity 0.5s, bottom 0.5s;
         }
@@ -270,75 +242,68 @@
 <body>
 
     <div class="container">
-        <h1>🌎 Global Dessert Generator 🍭</h1>
+        <h1>🍰 Sweet Dreams Creator ✨</h1>
 
         <div class="grid-wrapper" id="gridContainer">
             </div>
 
         <div class="result-box">
-            <div id="finalSentence">✨ กดปุ่ม <b style="color:#ff80ab">"สุ่มโจทย์ขนมหวาน"</b> เพื่อเริ่มภารกิจ! ✨</div>
-            <textarea id="copyArea" placeholder="ผลลัพธ์จะปรากฏที่นี่..."></textarea>
+            <div id="finalSentence">✨ กดปุ่ม <b style="color:#ff9aa2">"เสกเมนูของหวาน"</b> เพื่อเริ่มปรุง! ✨</div>
+            <textarea id="copyArea" placeholder="สูตรจะปรากฏที่นี่..."></textarea>
         </div>
 
         <div class="btn-group">
             <button class="main-btn reset-btn" onclick="unlockAll()">🔓 ปลดล็อก</button>
-            <button class="main-btn spin-btn" onclick="spinAll()">🎲 สุ่มโจทย์ขนมหวาน (Spin)</button>
-            <button class="main-btn copy-btn" id="btnCopy" onclick="copyText()">📋 คัดลอกโจทย์</button>
+            <button class="main-btn spin-btn" onclick="spinAll()">🪄 เสกเมนู (Spin)</button>
+            <button class="main-btn copy-btn" id="btnCopy" onclick="copyText()">📋 คัดลอกสูตร</button>
         </div>
     </div>
 
-    <div id="toast">✅ คัดลอกเรียบร้อย! ขอให้สนุกกับการทำขนมน้า 👩‍🍳</div>
+    <div id="toast">✅ คัดลอกเรียบร้อย! ขอให้อร่อยนะค้า 😋</div>
 
     <script>
-        // --- DATA ---
-        // เนื่องจากรายการยาวมาก จะตัดให้สั้นลงในส่วนนี้เพื่อการแสดงผล แต่ในการใช้งานจริงใส่ครบ 500+ ได้เลย
+        // --- 1. PREPARING THE DATA --- 
+        // แยกหมวดหมู่เพื่อให้ "ปลอดภัยและเป็นไปได้จริง" (Combinable Safe Logic)
         
-        const countryList = [
-            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "UAE", "UK", "USA", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe", "Vatican City", "Palestine"
-        ];
+        const data = {
+            country: [
+                "France", "Japan", "Italy", "Thailand", "USA", "United Kingdom", "Turkey", "India", "China", "Korea", "Mexico", "Spain", "Germany", "Austria", "Belgium", "Australia", "Brazil", "Vietnam", "Indonesia", "Portugal", "Sweden", "Egypt", "Morocco", "Argentina", "New Zealand", "Switzerland", "Greece", "Peru", "Philippines", "Russia", "Singapore"
+            ],
+            
+            base: [ // แป้งและฐาน
+                "แป้งสาลีอเนกประสงค์", "แป้งสาลีทำเค้ก", "แป้งอัลมอนด์", "แป้งข้าวเจ้า", "แป้งข้าวเหนียว", "แป้งพัฟ/พาย", "เกล็ดขนมปังบด", "แป้งเครป", "แป้งชูว์ (Choux)", "เมอแร็งก์ (ไข่ขาว)", "บิสกิตบด", "แป้งทาร์ต", "แป้งโดนัท", "แป้งวาฟเฟิล", "แป้งแพนเค้ก", "ข้าวเหนียวมูน", "สาคู", "เจลาติน/วุ้น", "ครัวซองต์", "บราวนี่", "ชีสเค้กเบส", "ขนมปังบริยอช", "แป้งถั่วเขียว", "แป้งมันม่วง", "แป้งโมจิ"
+            ],
+            
+            liquid_fat: [ // ของเหลวและไขมัน (Binder)
+                "นมสด", "กะทิ", "ครีมสด (Heavy Cream)", "ครีมชีส", "มาสคาร์โปเน่", "โยเกิร์ต", "เนยสด", "นมข้นหวาน", "น้ำลอยดอกมะลิ", "น้ำมะพร้าว", "นมอัลมอนด์", "นมถั่วเหลือง", "ซาวร์ครีม", "ไวท์ช็อกโกแลตละลาย", "ดาร์กช็อกโกแลตละลาย", "น้ำผึ้ง", "คาราเมลซอส", "น้ำเชื่อมเมเปิล", "นมข้าวโอ๊ต", "วิปปิ้งครีม"
+            ],
 
-        const ingredientList = [
-            "แป้งสาลีอเนกประสงค์", "แป้งเค้ก", "แป้งขนมปัง", "แป้งโฮลวีต", "แป้งอัลมอนด์", "แป้งมะพร้าว", "แป้งข้าวเจ้า", "แป้งข้าวเหนียว", "แป้งข้าวโพด", "แป้งมันสำปะหลัง", "แป้งเท้ายายม่อม", "แป้งถั่วเขียว", "แป้งข้าวโอ๊ต", "แป้งบัควีต", "แป้งมันฝรั่ง", "แป้งมันม่วง", "แป้งกล้วย", 
-            "น้ำตาลทรายขาว", "น้ำตาลทรายแดง", "น้ำตาลไอซิ่ง", "น้ำตาลมะพร้าว", "น้ำตาลอ้อย", "น้ำเชื่อมเมเปิล", "น้ำผึ้ง", "น้ำผึ้งดอกลำไย", "คาราเมลซอส", "หญ้าหวาน", "นมข้นหวาน", "นมสด", "วิปปิ้งครีม", "โยเกิร์ต", "ครีมชีส", "มาสคาร์โปเน่", "ริคอตต้า", "เนยจืด", "เนยเค็ม", "กะทิ", "นมถั่วเหลือง", "นมอัลมอนด์", 
-            "ไข่ไก่", "ไข่แดง", "ไข่ขาว", "ไข่เป็ด", "เจลาติน", "ผงวุ้น", "เบกกิ้งโซดา", "ผงฟู", "ยีสต์", "น้ำมันพืช", "น้ำมันมะกอก", "น้ำมันมะพร้าว", "เนยโกโก้", 
-            "โกโก้ผง", "ช็อกโกแลตดำ", "ช็อกโกแลตนม", "ไวท์ช็อกโกแลต", "นูเทลล่า", "วานิลลา", "อบเชย", "ลูกจันทน์เทศ", "กานพลู", "ขิง", "ชาเขียวมัทฉะ", "ชาไทย", "ชาเอิร์ลเกรย์", "กาแฟ", 
-            "อัลมอนด์", "เฮเซลนัท", "วอลนัท", "พีแคน", "แมคคาเดเมีย", "เม็ดมะม่วงหิมพานต์", "พิสตาชิโอ", "งาขาว", "งาดำ", "เมล็ดทานตะวัน", "เมล็ดเจีย", 
-            "สตรอว์เบอร์รี", "บลูเบอร์รี", "ราสป์เบอร์รี", "เชอร์รี", "แอปเปิล", "แพร์", "พีช", "ส้ม", "เลมอน", "ไลม์", "สับปะรด", "มะม่วง", "กล้วย", "แตงโม", "เมลอน", "เสาวรส", "ลิ้นจี่", "ลำไย", "มังคุด", "ทุเรียน", "มะพร้าวอ่อน", "ลูกเกด", "แครนเบอร์รีแห้ง", "ผลไม้เชื่อม", 
-            "ข้าวเหนียว", "ข้าวโอ๊ต", "กราโนล่า", "ถั่วแดงกวน", "ถั่วเขียว", "เต้าหู้", "มะพร้าวคั่ว", "มาร์ชเมลโลว์", "ทองหยิบ/ทองหยอด (ฟิวชั่น)", "เหล้ารัม", "เหล้ากาแฟ"
-        ];
-        // หมายเหตุ: รวมรายการข้างบนของคุณไว้ในนี้ แต่ตัดทอนเล็กน้อยเพื่อไม่ให้โค้ดยาวเกินไปในตัวอย่าง (แต่สามารถ Paste ทับด้วยลิสต์ 500 รายการเต็มๆ ได้เลยครับ)
+            flavor_main: [ // รสชาติหลัก (Star Ingredient)
+                "สตรอว์เบอร์รี", "บลูเบอร์รี", "ราสป์เบอร์รี", "มะม่วงสุก", "ทุเรียน", "กล้วยหอม", "พีช/ลูกท้อ", "แอปเปิล", "เลมอน/มะนาว", "ส้มยูสุ", "มัทฉะ (ชาเขียว)", "ชาไทย", "กาแฟเอสเพรสโซ", "โกโก้เข้มข้น", "วานิลลาฝัก", "อัลมอนด์", "แมคคาเดเมีย", "ถั่วพิสตาชิโอ", "มะพร้าวคั่ว", "มันม่วง", "เผือก", "ไข่เค็ม", "ชาเอิร์ลเกรย์", "ดอกกุหลาบ", "ใบเตย", "ช็อกโกแลตมินต์", "คาราเมล", "น้ำผึ้งป่า"
+            ],
 
-        const colors = [
-            "Pastel Wash (พาสเทลละมุน)", "Neon Pop (สีจัดจ้าน)", "Earth Tone (น้ำตาล-ครีม-เขียว)", "Jewel Tone (แดงไวน์/มรกต)", "Ombre / Gradient (ไล่เฉดสี)", "Duotone Minimal (2 สีมินิมอล)", "Black & Gold (ดำ-ทองหรู)", "Milk Tea Palette (ครีมนมชา+คาราเมล)", "Spring/Summer (สดใส)", "Autumn/Winter (อบอุ่น/เย็น)", "Day Mood (สว่าง)", "Night Mood (ลึกลับ)"
-        ];
+            add_in: [ // ส่วนผสมเสริม (Texture/Unique Taste)
+                "ช็อกโกแลตชิพ", "ลูกเกด/ผลไม้แห้ง", "เยลลี่ผลไม้", "มาร์ชเมลโลว์", "โอรีโอบด", "ทองม้วนบด", "ฝอยทอง", "ถั่วแดงกวน", "โมจิ/ดังโงะ", "ไข่มุกบุก", "ซีเรียล/คอนเฟลก", "คุกกี้ครัมเบิ้ล", "เนื้อตาล", "ซินนามอน (อบเชย)", "เหล้ารัม (Rum)", "กลิ่นดอกส้ม", "เกลือทะเล (Sea Salt)", "งาคั่ว", "เมล็ดเจีย", "พริกไทยชมพู (Pink Peppercorn)", "ผิวส้มเชื่อม", "ขิงเชื่อม", "ทองคำเปลว"
+            ],
 
-        const shapes = [
-            "Geometric (เรขาคณิต)", "Asymmetrical (ไม่สมมาตร)", "Stacking / Tower (หอคอย)", "Layer Reveal (โชว์ชั้น)", "Ring / Donut (วงแหวน)", "Spiral / Swirl (ก้นหอย)", "Grid / Checkerboard (ตาราง)", "Dip & Drag (ปาดซอส)", "Smear Art (ป้ายซอสศิลป์)"
-        ];
-
-        const techniques = [
-            "Dusting (โรยผง)", "Shards (แผ่นกรอบ)", "Tuile / Lace (ลูกไม้กรอบ)", "Edible Flowers (ดอกไม้กินได้)", "Gold/Silver Leaf (แผ่นทอง/เงิน)", "Pearls & Caviar (เม็ดซอส)", "Mirror Glaze (เคลือบเงา)", "Drip Effect (ซอสไหล)", "Torch Finish (เบิร์นไฟ)", "Snow Effect (หิมะ)"
-        ];
-
-        const plates = [
-            "Slate / Stone (จานหิน)", "Wood Board (เขียงไม้)", "Glass Plate (จานแก้วใส)", "Matte Black (ดำด้าน)", "Vintage Floral (ลายวินเทจ)", "Bento Box (กล่องเบนโตะ)", "Jar (เสิร์ฟในโหล)", "Skillet (กระทะร้อน)", "Banana Leaf (ใบตอง)", "Paper Wrap (ห่อกระดาษ)"
-        ];
+            visual: [ // การตกแต่งและสไตล์
+                "Pastel Wash (สีพาสเทล)", "Neon Pop (สีสันสดใส)", "Earth Tone (มินิมอล)", "Black & Gold (หรูหรา)", "Geometric (รูปทรงเรขาคณิต)", "Deconstructed (แยกส่วน)", "Layered (เป็นชั้นๆ)", "In a Jar (ในขวดโหล)", "Bento Style (ใส่กล่อง)", "Nature Inspired (ธีมธรรมชาติ)", "Drip Effect (ซอสไหล)", "Glazed (เคลือบเงา)", "Rustic (บ้านทุ่ง)", "Floral (ประดับดอกไม้)"
+            ]
+        };
 
         // UI Config
         const config = [
-            { id: "country", label: "🗺️ ประเทศต้นแบบ (Origin)", data: countryList },
-            { id: "ing1", label: "🥣 วัตถุดิบหลัก 1 (Mystery 1)", data: ingredientList },
-            { id: "ing2", label: "🍫 วัตถุดิบหลัก 2 (Mystery 2)", data: ingredientList },
-            { id: "ing3", label: "🍓 วัตถุดิบหลัก 3 (Mystery 3)", data: ingredientList },
-            { id: "color", label: "🎨 โทนสี (Color/Mood)", data: colors },
-            { id: "shape", label: "📐 รูปทรง (Composition)", data: shapes },
-            { id: "tech", label: "✨ เทคนิค (Garnish)", data: techniques },
-            { id: "plate", label: "🍽️ ภาชนะ (Plate)", data: plates }
+            { id: "country", label: "🗺️ แรงบันดาลใจ (Country)", data: data.country },
+            { id: "base", label: "🍰 ฐานหลัก (Base)", data: data.base },
+            { id: "liquid", label: "🥛 เนื้อสัมผัส (Cream/Liquid)", data: data.liquid_fat },
+            { id: "main", label: "🍓 รสชาติพระเอก (Main Flavor)", data: data.flavor_main },
+            { id: "add", label: "✨ ลูกเล่นลับ (Secret Twist)", data: data.add_in },
+            { id: "visual", label: "🎨 สไตล์การเสิร์ฟ (Style)", data: data.visual }
         ];
 
         let state = {};
 
-        // Init App
+        // 2. INITIALIZATION
         function init() {
             const container = document.getElementById('gridContainer');
             config.forEach(cfg => {
@@ -347,96 +312,54 @@
                 const card = document.createElement('div');
                 card.className = "slot-card";
                 card.id = `card-${cfg.id}`;
-                
-                // Dropdown options (limit to show only random + first 50 items to prevent lag in DOM, but spin uses full list)
-                // For smoother UI, we will just put "Random" in select initially or a subset.
-                // Let's use standard select logic but keep it simple.
-                
                 card.innerHTML = `
                     <div class="header-row">
                         <span class="label">${cfg.label}</span>
-                        <button class="lock-btn" id="lock-${cfg.id}" onclick="toggleLock('${cfg.id}')" title="ล็อกช่องนี้">🔓</button>
+                        <button class="lock-btn" id="lock-${cfg.id}" onclick="toggleLock('${cfg.id}')" title="ล็อกไว้">🔓</button>
                     </div>
-                    <select id="select-${cfg.id}" onchange="handleSelect('${cfg.id}')">
-                        <option value="random">🎲 สุ่ม (Random)</option>
-                         <option disabled>--- เลือกเอง (ตัวอย่าง) ---</option>
-                        ${cfg.data.slice(0, 50).map(item => `<option value="${item}">${item}</option>`).join('')}
-                    </select>
                     <div class="display-value" id="disp-${cfg.id}">...</div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        // Toggle Lock
         function toggleLock(id) {
             state[id].locked = !state[id].locked;
-            updateLockUI(id);
-        }
-
-        function updateLockUI(id) {
             const btn = document.getElementById(`lock-${id}`);
             const card = document.getElementById(`card-${id}`);
-            const select = document.getElementById(`select-${id}`);
-
+            
             if (state[id].locked) {
                 btn.innerText = "🔒";
                 card.classList.add('locked');
-                if (select.value === 'random' && state[id].value === '...') {
-                     const pool = config.find(c => c.id === id).data;
-                     const randomVal = pool[Math.floor(Math.random() * pool.length)];
-                     state[id].value = randomVal;
-                     document.getElementById(`disp-${id}`).innerText = randomVal;
-                }
             } else {
                 btn.innerText = "🔓";
                 card.classList.remove('locked');
             }
         }
 
-        function handleSelect(id) {
-            const select = document.getElementById(`select-${id}`);
-            const display = document.getElementById(`disp-${id}`);
-            const val = select.value;
-
-            if (val !== "random") {
-                state[id].value = val;
-                display.innerText = val;
-                if (!state[id].locked) {
-                    state[id].locked = true;
-                    updateLockUI(id);
-                }
-            } else {
-                if (state[id].locked) {
-                    state[id].locked = false;
-                    updateLockUI(id);
-                }
-                display.innerText = "...";
-                state[id].value = "...";
-            }
-        }
-
         function unlockAll() {
             config.forEach(cfg => {
-                if(state[cfg.id].locked) {
-                    state[cfg.id].locked = false;
-                    updateLockUI(cfg.id);
-                }
-                document.getElementById(`select-${cfg.id}`).value = "random";
+                state[cfg.id].locked = false;
+                const btn = document.getElementById(`lock-${cfg.id}`);
+                const card = document.getElementById(`card-${cfg.id}`);
+                btn.innerText = "🔓";
+                card.classList.remove('locked');
             });
         }
 
-        // Spin Logic
+        // 3. SPIN LOGIC
         function spinAll() {
             const btn = document.querySelector('.spin-btn');
             btn.disabled = true;
-            btn.innerHTML = "⏳ กำลังอบขนม...";
+            btn.innerHTML = "🥣 กำลังตีส่วนผสม...";
             
+            // Hide Copy tools temporarily
             document.getElementById('btnCopy').style.display = 'none';
             document.getElementById('copyArea').style.display = 'none';
             document.getElementById('finalSentence').style.display = 'block';
 
             let activeSlots = config.filter(cfg => !state[cfg.id].locked);
+
             if (activeSlots.length === 0) {
                 finalizeSpin();
                 return;
@@ -448,19 +371,20 @@
                 const display = document.getElementById(`disp-${cfg.id}`);
                 const pool = cfg.data;
                 let counter = 0;
-                // Cascading stop effect
-                let stopThreshold = 10 + (index * 3); 
+                let speed = 50;
+                let stopThreshold = 10 + (index * 3); // Cascade effect
 
                 const interval = setInterval(() => {
                     display.innerText = pool[Math.floor(Math.random() * pool.length)];
                     counter++;
+
                     if (counter > stopThreshold) {
                         clearInterval(interval);
                         const finalVal = pool[Math.floor(Math.random() * pool.length)];
                         display.innerText = finalVal;
                         state[cfg.id].value = finalVal;
                     }
-                }, 50);
+                }, speed);
             });
 
             setTimeout(() => finalizeSpin(), 50 * (10 + (config.length * 3)) + 300);
@@ -469,35 +393,37 @@
         function finalizeSpin() {
             const btn = document.querySelector('.spin-btn');
             btn.disabled = false;
-            btn.innerHTML = "🎲 สุ่มโจทย์ขนมหวาน (Spin)";
+            btn.innerHTML = "🪄 เสกเมนู (Spin)";
             generateResult();
         }
 
+        // 4. GENERATE SENTENCE & COPY TEXT
         function generateResult() {
             const v = {};
-            config.forEach(cfg => v[cfg.id] = state[cfg.id].value === "..." ? "สุ่มก่อน" : state[cfg.id].value);
+            config.forEach(cfg => v[cfg.id] = state[cfg.id].value === "..." ? "(สุ่มก่อน)" : state[cfg.id].value);
 
-            const sentenceHtml = `
-                🍰 <b>โจทย์ขนมวันนี้:</b> แรงบันดาลใจจาก <span class="highlight">${v.country}</span><br>
-                🛒 <b>Mystery Basket:</b> <span class="highlight">${v.ing1}</span> + <span class="highlight">${v.ing2}</span> + <span class="highlight">${v.ing3}</span><br>
-                🎨 <b>Mood & Tone:</b> <span class="highlight">${v.color}</span> โดยจัดวางแบบ <span class="highlight">${v.shape}</span><br>
-                ✨ <b>เทคนิคพิเศษ:</b> ใช้ <span class="highlight">${v.tech}</span> บน <span class="highlight">${v.plate}</span>
+            // HTML Display
+            const html = `
+                🧁 <b>Concept:</b> ขนมหวานสไตล์ <span class="highlight">${v.country}</span><br>
+                🥣 <b>วัตถุดิบหลัก:</b> ใช้ <span class="highlight">${v.base}</span> ผสมผสานกับ <span class="highlight">${v.liquid}</span><br>
+                🍓 <b>รสชาติเด่น:</b> ชูโรงด้วย <span class="highlight">${v.main}</span> และตัดรสด้วย <span class="highlight">${v.add}</span><br>
+                🎨 <b>หน้าตา:</b> จัดเสิร์ฟแบบ <span class="highlight">${v.visual}</span>
             `;
+            document.getElementById('finalSentence').innerHTML = html;
 
-            document.getElementById('finalSentence').innerHTML = sentenceHtml;
-
-            // Prepare Copy Text
-            const textToCopy = `🧁 Global Dessert Challenge 🍩\n\n` +
-                `🗺️ Origin: ${v.country}\n` +
-                `🥣 Ingredients: ${v.ing1}, ${v.ing2}, ${v.ing3}\n` +
-                `🎨 Palette: ${v.color}\n` +
-                `📐 Shape: ${v.shape}\n` +
-                `✨ Garnish: ${v.tech}\n` +
-                `🍽️ Plate: ${v.plate}\n\n` +
-                `#SweetFusion #DessertChallenge #BakerLife`;
+            // Copy Text (Plain Text)
+            const copyText = `🍰 โจทย์ทำขนมหวาน "Sweet Dreams Challenge" ✨\n\n` +
+                `🗺️ สไตล์: ${v.country}\n` +
+                `🥣 ฐาน: ${v.base}\n` +
+                `🥛 เนื้อสัมผัส: ${v.liquid}\n` +
+                `🍓 รสชาติหลัก: ${v.main}\n` +
+                `✨ ลูกเล่นลับ: ${v.add}\n` +
+                `🎨 การจัดจาน: ${v.visual}\n\n` +
+                `⚠️ หมายเหตุ: เป็นไอเดียเบื้องต้น โปรดปรับสัดส่วนและกรรมวิธีตามหลักความปลอดภัยทางอาหาร\n` +
+                `#SweetDreamsCreator #CookingChallenge`;
 
             const copyArea = document.getElementById('copyArea');
-            copyArea.value = textToCopy;
+            copyArea.value = copyText;
             copyArea.style.display = 'block';
             document.getElementById('btnCopy').style.display = 'flex';
         }
@@ -506,6 +432,7 @@
             const copyArea = document.getElementById("copyArea");
             copyArea.select();
             copyArea.setSelectionRange(0, 99999);
+            
             navigator.clipboard.writeText(copyArea.value).then(() => {
                 showToast();
             });
@@ -514,10 +441,10 @@
         function showToast() {
             const toast = document.getElementById("toast");
             toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        // Start
+        // Run
         init();
 
     </script>
